@@ -31,6 +31,7 @@ private func getSameLottoNumber(myLottoNumbers: [Int], realLottoNumber: Set<Int>
     return Set<Int>(myLottoNumbers).intersection(realLottoNumber)
 }
 
+@discardableResult
 func makeLotto() -> Set<Int> {
     var lottoSet: Set<Int> = Set<Int>()
     
@@ -38,9 +39,7 @@ func makeLotto() -> Set<Int> {
     for index in 0...5 {
         lottoSet.insert(suffledNumbers[index])
     }
-    
-    //print("lottoSet = \(lottoSet.sorted())")
-    
+
     saveLottoNumbers(lottoNumbers: lottoSet)
     
     return lottoSet
